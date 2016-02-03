@@ -26,7 +26,8 @@ task :declare do
                 publish('deps/npm/lib', pattern: '**/*', dst: 'bin/node_modules/npm/lib')
                 publish('deps/npm', pattern: '*.json', dst: 'bin/node_modules/npm')
                 sh 'npm install -g typescript'
-                %w[tsc tsserver].each do |name|
+                sh 'npm install -g nw'
+                %w[tsc tsserver nw].each do |name|
                     link_unless_exists(File.join(Dir.pwd, 'out','bin',name), shared('bin',name))
                 end
                 sh "touch #{install_ok_fn}"
