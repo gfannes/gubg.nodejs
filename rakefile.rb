@@ -1,10 +1,10 @@
 require(File.join(ENV['gubg'], 'shared'))
-include GUBG
+include Gubg
 
 task :default => :help
 task :help do
     puts("The following tasks can be specified:")
-    puts("* declare: installs bash, vim and git scripts to GUBG.shared")
+    puts("* declare: installs bash, vim and git scripts to Gubg.shared")
     puts("* define: creates symbolic link to the installed vim scripts and .inputrc")
 end
 
